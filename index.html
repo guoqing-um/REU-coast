@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COAST REU Site | University of Miami Rosenstiel School</title>
+<meta name="description" content="NSF REU Site at the University of Miami Rosenstiel School. Ten-week summer research in coastal Earth-system science across atmosphere, ocean, ecosystems, and solid Earth.">
+<style>
+  /* ---------- Lighter, academic & professional palette ---------- */
+  :root {
+    --um-orange: #E87B3A;
+    --um-orange-light: #FDF0E6;
+    --um-green: #7BAE9A;
+    --um-green-light: #EAF4F0;
+    --um-green-deep: #3D6B5A;
+    --um-green-muted: #5A8C78;
+    --warm-white: #FEFCF9;
+    --cream: #FAF7F2;
+    --soft-sand: #F5F1EA;
+    --ink: #2D2D2D;
+    --ink-soft: #5A5A5A;
+    --ink-muted: #8A8A8A;
+    --rule: #E8E3DA;
+    --rule-light: #F0EBE2;
+    --card-bg: #FFFFFF;
+    --max-w: 1120px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--um-green-deep);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 0.5em;
+  }
+  h1 { font-size: 2.6rem; }
+  h2 { 
+    font-size: 1.9rem; 
+    border-bottom: 2px solid var(--um-orange); 
+    padding-bottom: 0.3em; 
+    display: inline-block; 
+  }
+  h3 { font-size: 1.25rem; color: var(--um-green-muted); }
+  h4 { font-size: 1.0rem; color: var(--um-orange); text-transform: uppercase; letter-spacing: 0.06em; }
+  p { margin: 0 0 1em; color: var(--ink-soft); }
+  a { 
+    color: var(--um-green-muted); 
+    text-decoration: underline; 
+    text-decoration-color: var(--um-orange); 
+    text-underline-offset: 3px; 
+  }
+  a:hover { color: var(--um-orange); }
+
+  /* ---------- Top bar / nav ---------- */
+  .topbar {
+    background: var(--cream);
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: var(--um-green-muted); text-decoration: none; }
+  .topbar a:hover { color: var(--um-orange); }
+
+  nav.main {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+  }
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--um-green-muted);
+    font-family: "Source Serif Pro", Georgia, serif;
+  }
+  .brand-mark {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--um-orange-light);
+    color: var(--um-orange);
+    display: grid; place-items: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: 2px solid var(--um-orange);
+    font-family: "Source Serif Pro", Georgia, serif;
+  }
+  .brand-text { line-height: 1.1; }
+  .brand-text strong { display: block; font-size: 1.15rem; font-weight: 600; color: var(--um-green-deep); }
+  .brand-text small { font-size: 0.75rem; color: var(--ink-muted); font-family: "Source Sans Pro", sans-serif; }
+  .nav-links { display: flex; gap: 20px; font-size: 0.95rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .nav-links a:hover { color: var(--um-orange); border-color: var(--um-orange); }
+  .apply-btn {
+    background: var(--um-orange) !important;
+    color: #fff !important;
+    padding: 8px 16px !important;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none !important;
+  }
+  .apply-btn:hover { background: var(--um-green-muted) !important; color: #fff !important; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(123, 174, 154, 0.15), rgba(93, 140, 120, 0.12)),
+      linear-gradient(180deg, #E8F4F0 0%, #D8EBE4 55%, #CDE5DB 100%);
+    color: var(--ink);
+    padding: 90px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(180deg, transparent 0 28px, rgba(123, 174, 154, 0.03) 28px 29px);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero .eyebrow {
+    color: var(--um-orange);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .hero h1 { color: var(--um-green-deep); font-size: 2.9rem; margin-bottom: 16px; }
+  .hero .sub {
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 auto 32px;
+    line-height: 1.5;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(123, 174, 154, 0.25);
+  }
+  .stat { text-align: center; min-width: 130px; }
+  .stat .num {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 2.1rem;
+    color: var(--um-orange);
+    font-weight: 600;
+    display: block;
+    line-height: 1;
+  }
+  .stat .lbl { font-size: 0.85rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .cta-row { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.1s, box-shadow 0.15s;
+  }
+  .btn-primary { background: var(--um-orange); color: #fff; }
+  .btn-primary:hover { background: #D06A2E; color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(232, 123, 58, 0.25); }
+  .btn-ghost { background: transparent; color: var(--um-green-deep); border: 2px solid var(--um-green); }
+  .btn-ghost:hover { background: var(--um-green); color: #fff; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 70px 24px; }
+  .container { max-width: var(--max-w); margin: 0 auto; }
+  section.alt { background: var(--soft-sand); }
+
+  .lede { font-size: 1.15rem; color: var(--ink); max-width: 780px; }
+
+  /* ---------- About / pillars ---------- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+  }
+  .pillar {
+    background: var(--card-bg);
+    padding: 24px;
+    border-left: 4px solid var(--um-orange);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .pillar h3 { color: var(--um-green-muted); margin-bottom: 8px; }
+  .pillar p { font-size: 0.96rem; }
+
+  /* ---------- Departments strip ---------- */
+  .depts {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .dept-chip {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--um-green);
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .dept-chip strong { color: var(--um-green-muted); font-family: "Source Serif Pro", Georgia, serif; }
+
+  /* ---------- Themes ---------- */
+  .theme {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  }
+  .theme-head {
+    background: var(--um-green-light);
+    color: var(--um-green-deep);
+    padding: 20px 26px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(123, 174, 154, 0.2);
+  }
+  .theme-num {
+    background: var(--um-orange);
+    color: #fff;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .theme-head h3 { color: var(--um-green-deep); margin: 0; font-size: 1.35rem; }
+  .theme-head .depts-tag { font-size: 0.8rem; color: var(--um-green-muted); margin-top: 2px; letter-spacing: 0.05em; }
+  .theme-body { padding: 24px; }
+  .theme-body > p { color: var(--ink); }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .project {
+    background: var(--soft-sand);
+    padding: 18px 20px;
+    border-radius: 3px;
+    border-top: 3px solid var(--um-orange);
+  }
+  .project .mentor {
+    font-weight: 600;
+    color: var(--um-green-muted);
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+  }
+  .project .dept {
+    display: inline-block;
+    background: var(--um-green-light);
+    color: var(--um-green-deep);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    margin-left: 6px;
+    vertical-align: middle;
+    border: 1px solid rgba(123, 174, 154, 0.25);
+  }
+  .project p { font-size: 0.93rem; color: var(--ink-soft); margin: 8px 0 0; }
+  .project p.bridges {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+    font-size: 0.82rem;
+    color: var(--um-green-muted);
+    font-style: italic;
+  }
+  .project p.bridges em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--um-orange);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Apply ---------- */
+  .apply-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 36px;
+    margin-top: 32px;
+  }
+  .apply-steps { counter-reset: step; }
+  .apply-step {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .apply-step:last-child { border-bottom: none; }
+  .apply-step::before {
+    counter-increment: step;
+    content: counter(step);
+    background: var(--um-orange);
+    color: #fff;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .apply-step h4 { color: var(--um-green-muted); margin: 4px 0 6px; text-transform: none; letter-spacing: 0; font-size: 1.05rem; }
+  .apply-step p { margin: 0; font-size: 0.95rem; }
+
+  .key-dates {
+    background: var(--um-green-light);
+    color: var(--um-green-deep);
+    padding: 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(123, 174, 154, 0.2);
+    border-top: 3px solid var(--um-orange);
+  }
+  .key-dates h3 { color: var(--um-green-deep); font-size: 1.25rem; margin-bottom: 16px; border-bottom: 1px solid rgba(123, 174, 154, 0.2); padding-bottom: 10px; }
+  .date-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dotted rgba(123, 174, 154, 0.15); font-size: 0.95rem; color: var(--ink); }
+  .date-row:last-child { border-bottom: none; }
+  .date-row .when { color: var(--um-orange); font-weight: 600; }
+  .key-dates p.fineprint { font-size: 0.82rem; color: var(--um-green-muted); margin-top: 14px; margin-bottom: 0; font-style: italic; }
+
+  .eligibility {
+    background: var(--soft-sand);
+    padding: 24px;
+    border-left: 4px solid var(--um-green);
+    margin-top: 30px;
+    border-radius: 2px;
+  }
+  .eligibility h3 { margin-top: 0; }
+  .eligibility ul { padding-left: 20px; margin: 8px 0 0; }
+  .eligibility li { margin-bottom: 6px; color: var(--ink); }
+
+  /* ---------- Student life ---------- */
+  .life-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .life-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+  .life-card .icon-badge {
+    width: 44px; height: 44px;
+    background: var(--um-orange-light);
+    color: var(--um-orange);
+    border-radius: 4px;
+    display: grid; place-items: center;
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    border: 1px solid rgba(232, 123, 58, 0.2);
+  }
+  .life-card h3 { margin-bottom: 10px; }
+  .life-card p { font-size: 0.96rem; margin-bottom: 0; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--cream);
+    color: var(--ink-muted);
+    padding: 56px 24px 28px;
+    margin-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .footer-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--rule);
+  }
+  footer h4 { color: var(--um-orange); margin-bottom: 14px; font-size: 0.82rem; }
+  footer p { color: var(--ink-muted); font-size: 0.92rem; }
+  footer a { color: var(--um-green-muted); font-size: 0.92rem; text-decoration: none; }
+  footer a:hover { color: var(--um-orange); }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer ul li { margin-bottom: 8px; }
+  footer strong { color: var(--um-green-deep) !important; }
+  .colophon {
+    max-width: var(--max-w);
+    margin: 20px auto 0;
+    font-size: 0.8rem;
+    color: #9A9588;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nsf-note { font-style: italic; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px) {
+    h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.1rem; }
+    .nav-links { display: none; }
+    .nav-links.apply-only { display: flex; }
+    .pillars, .projects, .life-grid { grid-template-columns: 1fr; }
+    .apply-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 18px; }
+    .stat { min-width: 100px; }
+    .stat .num { font-size: 1.6rem; }
+    section { padding: 50px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ Top bar ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>University of Miami &nbsp;|&nbsp; Rosenstiel School of Marine, Atmospheric, and Earth Science</span>
+    <span><a href="https://earth.miami.edu" target="_blank" rel="noopener">earth.miami.edu</a></span>
+  </div>
+</div>
+
+<!-- ============ Nav ============ -->
+<nav class="main">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <strong>COAST</strong>
+        <small>REU Site at the Rosenstiel School</small>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#apply">Apply</a>
+      <a href="#life">Student Life</a>
+      <a href="#contact">Contact</a>
+      <a href="#apply" class="apply-btn">Apply Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">NSF Research Experiences for Undergraduates</div>
+    <h1>Coastal Observation, Analysis, Simulation &amp; Technology</h1>
+    <p class="sub">
+      A ten-week paid summer research program at the University of Miami's Rosenstiel School on Virginia Key, where undergraduates work alongside faculty on the science of hurricanes, sea-level rise, marine heatwaves, coral ecosystems, and the coupled coastal Earth system.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#apply">Apply for Summer 2027</a>
+      <a class="btn btn-ghost" href="#research">Explore Research Projects</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">10</span><span class="lbl">weeks of paid research</span></div>
+      <div class="stat"><span class="num">8&ndash;10</span><span class="lbl">students per cohort</span></div>
+      <div class="stat"><span class="num">16</span><span class="lbl">faculty mentor projects</span></div>
+      <div class="stat"><span class="num">5</span><span class="lbl">Rosenstiel departments</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ About ============ -->
+<section id="about">
+  <div class="container">
+    <h2>About COAST</h2>
+    <p class="lede">
+      South Florida sits at the leading edge of coupled coastal Earth-system change: intensifying tropical cyclones, marine heatwaves, accelerating sea-level rise, reef decline, and coastal solid-Earth responses to ocean and storm forcing. COAST uses this region and the broader tropical western Atlantic as a living laboratory for undergraduate research that crosses traditional disciplinary boundaries.
+    </p>
+    <p>
+      The Rosenstiel School is one of very few places in the United States where atmospheric, ocean, marine-biology, environmental, and geoscience faculty work side by side on Virginia Key. The school houses the NOAA Cooperative Institute for Marine and Atmospheric Studies (CIMAS), sits directly across the street from NOAA's Atlantic Oceanographic and Meteorological Laboratory (AOML), and is near the U.S. National Hurricane Center. COAST embeds students in this research environment for a full ten weeks of mentored, hands-on coastal Earth-system science.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h4>Observation &amp; Analysis</h4>
+        <h3>Field, laboratory, and data</h3>
+        <p>Students work with field observations, autonomous platforms, satellite remote sensing, sediment and biological samples, and large environmental datasets using reproducible computational workflows.</p>
+      </div>
+      <div class="pillar">
+        <h4>Simulation</h4>
+        <h3>Modeling the Earth system</h3>
+        <p>Projects span climate models, geodynamic simulations, machine-learning emulators, and explainable AI for coastal hazards, including emerging AI methods for weather and climate prediction.</p>
+      </div>
+      <div class="pillar">
+        <h4>Technology</h4>
+        <h3>Sensing &amp; computing infrastructure</h3>
+        <p>Access to the R/V <em>F. G. Walton Smith</em>, the SUSTAIN hurricane-scale wind-wave-surge laboratory, the CSTARS remote-sensing facility, genomics infrastructure, and HPC through UM's Frost Institute for Data Science and Computing.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 48px;">Participating Departments</h3>
+    <p>COAST projects are drawn from all five departments at the Rosenstiel School:</p>
+    <div class="depts">
+      <div class="dept-chip"><strong>ATM</strong> &middot; Atmospheric Sciences</div>
+      <div class="dept-chip"><strong>EVR</strong> &middot; Environmental Science &amp; Policy</div>
+      <div class="dept-chip"><strong>MBE</strong> &middot; Marine Biology &amp; Ecology</div>
+      <div class="dept-chip"><strong>MGS</strong> &middot; Marine Geosciences</div>
+      <div class="dept-chip"><strong>OCE</strong> &middot; Ocean Sciences</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Research Themes ============ -->
+<section id="research" class="alt">
+  <div class="container">
+    <h2>Research Themes &amp; Mentor Projects</h2>
+    <p class="lede">
+      Rather than organize the program by department, COAST integrates projects through four cross-cutting themes that together span the coupled coastal Earth system. The full three-year pool comprises 16 mentor projects (four per theme); no more than 10 are active in any single summer, matched to the cohort of 8&ndash;10 students. Many projects bridge two or more themes, and these cross-theme links are surfaced explicitly within each project.
+    </p>
+
+    <!-- ===== THEME 1: Climate, Hazards, and Resilience ===== -->
+    <div class="theme" style="margin-top: 36px;">
+      <div class="theme-head">
+        <div class="theme-num">1</div>
+        <div>
+          <h3>Climate, Hazards, and Resilience</h3>
+          <div class="depts-tag">ATM &middot; EVR &middot; MGS &middot; MBE</div>
+        </div>
+      </div>
+      <div class="theme-body">
+        <p>How climate variability and extreme events propagate through coastal atmosphere, solid Earth, and biological systems, and the adaptation responses of communities living with these hazards. South Florida serves as a shared observational laboratory across the four projects.</p>
+        <div class="projects">
+          <div class="project">
+            <div class="mentor">P. Zuidema <span class="dept">ATM</span></div>
+            <p>Florida Atmospheric Boundary Layer Experiment (FABLE): vertical profiles of temperature, humidity, winds, and aerosols along a southeast Florida transect. Students apply quality control, daily-cycle compositing, and visualization to a curated profile subset.</p>
+            <p class="bridges"><em>Bridges to:</em> T4 (observational technology and atmospheric measurement systems).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">K. Mach <span class="dept">EVR</span></div>
+            <p>Climate risk and adaptation science in partnership with local governments and community organizations. Students translate chronic-heat datasets into decision-relevant community metrics or evaluate flood-model output for one adaptation scenario.</p>
+            <p class="bridges"><em>Bridges to:</em> T2 (community health, heat exposure, and human-environment vulnerability).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">G. Lin <span class="dept">MGS</span></div>
+            <p>Regional dense nodal seismic array across south Florida investigating shallow carbonate-platform structure and ocean-storm-solid-Earth coupling through the microseism wavefield. Students apply ambient-noise cross-correlation to a defined station subset.</p>
+            <p class="bridges"><em>Bridges to:</em> T4 (dense-node seismic array as autonomous observing technology).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">R. Heuer <span class="dept">MBE</span></div>
+            <p>Effects of climate-related stressors and environmental pollutants on neural and behavioral function in <em>Aplysia</em> or zebrafish using behavioral assays, imaging, and physiology. Students conduct one focused experimental comparison.</p>
+            <p class="bridges"><em>Bridges to:</em> T2 (organismal ecology and ecosystem-health implications) and T3 (pollutant biogeochemistry).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== THEME 2: Coastal Ecosystems, Restoration, and Health ===== -->
+    <div class="theme">
+      <div class="theme-head">
+        <div class="theme-num">2</div>
+        <div>
+          <h3>Coastal Ecosystems, Restoration, and Health</h3>
+          <div class="depts-tag">MBE &middot; EVR &middot; OCE</div>
+        </div>
+      </div>
+      <div class="theme-body">
+        <p>Coastal ecology, restoration biology, population biology, and the human-environment connections that link coastal ecosystems to community well-being. Three projects work within the Biscayne Bay and south Florida reef-tract system; the fourth supplies the open-ocean biogeochemical boundary condition for the same coastal system.</p>
+        <div class="projects">
+          <div class="project">
+            <div class="mentor">D. Lirman <span class="dept">MBE</span></div>
+            <p>Coral-reef restoration research integrating field, laboratory, and citizen-science components. Students analyze a monitoring dataset or conduct a small experiment focused on one restoration-performance metric (outplant survival, growth, or thermal tolerance).</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (reef resilience under marine heatwaves and climate stressors).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">D. Crawford &amp; M. Oleksiak <span class="dept">MBE</span></div>
+            <p>Population genomics of fish or invertebrate species in Biscayne Bay and adjacent south Florida waters, spanning DNA extraction, sequencing preparation, and computational analysis of one environmental contrast.</p>
+            <p class="bridges"><em>Bridges to:</em> T4 (computational genomics pipelines and bioinformatics).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">K. Ashad-Bishop <span class="dept">EVR</span></div>
+            <p>Mixed-methods environmental-health research at the intersection of urban fishing, extreme heat, and medical vulnerability in Miami-Dade County. Students pursue qualitative analysis of urban-fisher interviews or analyze biometric and heat-sensor data with UM Miller School clinic partners.</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (extreme heat as hazard and community-resilience challenge).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">M. Bif <span class="dept">OCE</span></div>
+            <p>Ocean carbon and nitrogen cycling investigated using BGC-Argo floats, satellite remote sensing, and shipboard observations. Students analyze one target region and biogeochemical variable.</p>
+            <p class="bridges"><em>Bridges to:</em> T3 (biogeochemical cycling) and T4 (autonomous floats and remote-sensing observing systems).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== THEME 3: Biogeochemistry and Environmental Change ===== -->
+    <div class="theme">
+      <div class="theme-head">
+        <div class="theme-num">3</div>
+        <div>
+          <h3>Biogeochemistry and Environmental Change</h3>
+          <div class="depts-tag">OCE &middot; MBE &middot; MGS</div>
+        </div>
+      </div>
+      <div class="theme-body">
+        <p>Coastal and open-ocean biogeochemical cycling, microbial-driven food webs, and the sediment and isotopic archives that record past and present environmental change. Each project reduces a defined material (particulate, tissue, sediment core, sequencing dataset, or fisheries record) to a focused measurement and interprets it within a longer environmental context.</p>
+        <div class="projects">
+          <div class="project">
+            <div class="mentor">H. Close <span class="dept">OCE</span></div>
+            <p>Organic and isotopic analyses of marine particulate matter, sediments, or organism tissues to investigate carbon and nitrogen sourcing and food-web structure within the ocean biological pump.</p>
+            <p class="bridges"><em>Bridges to:</em> T2 (food-web ecology and trophic structure).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">M. Moniruzzaman <span class="dept">MBE</span></div>
+            <p>Giant-virus impacts on coastal microbial food webs and biogeochemical cycling using field sampling, metagenomics, metatranscriptomics, and bioinformatics. Students annotate a defined viral marker group across one environmental contrast.</p>
+            <p class="bridges"><em>Bridges to:</em> T2 (microbial ecology and coastal food-web structure) and T4 (metagenomic and bioinformatic workflows).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">G. Eberli, A. Oehlert, R. Weger <span class="dept">MGS</span></div>
+            <p>High-recovery Last-Glacial-Maximum fringing-reef sediment-core archive offshore Mozambique (with J. Klaus and S. Goldberg). Students integrate petrophysical, mineralogical, or geochemical measurements into a deglacial sea-level framework.</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (paleo record of past sea-level hazard).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">E. Babcock <span class="dept">MBE</span></div>
+            <p>Quantitative marine ecology applied to fisheries and ecosystem management: bycatch of protected species, species-distribution modeling, food-web responses to nutrient pollution in Biscayne Bay, and seagrass-restoration value for juvenile gag-grouper production. Students pair with a Babcock-lab PhD student on one defined sub-question using version-controlled R and AI-assisted workflows.</p>
+            <p class="bridges"><em>Bridges to:</em> T2 (ecosystem management and seagrass-restoration value for fisheries) and T4 (statistical modeling and AI-assisted analytical workflows).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== THEME 4: Modeling, AI, and Technology ===== -->
+    <div class="theme">
+      <div class="theme-head">
+        <div class="theme-num">4</div>
+        <div>
+          <h3>Modeling, AI, and Technology</h3>
+          <div class="depts-tag">ATM &middot; MGS &middot; OCE</div>
+        </div>
+      </div>
+      <div class="theme-body">
+        <p>Computational modeling, machine learning, AI-assisted analysis, and observational technology as central scientific contributions across atmospheric, ocean, and solid-Earth systems. Students treat computation as a primary scientific instrument while connecting their work to observational and process projects elsewhere in the cohort.</p>
+        <div class="projects">
+          <div class="project">
+            <div class="mentor">S. Wang <span class="dept">ATM</span></div>
+            <p>Neural-network emulator of the E-AIM aerosol thermodynamics model for integration into atmospheric-modeling workflows. Students train and benchmark the emulator across a defined aerosol-composition range and evaluate performance against E-AIM outputs.</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (aerosol-climate coupling).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">M. Arcodia <span class="dept">ATM</span></div>
+            <p>Explainable AI for prediction of coastal marine heatwaves in the Caribbean-Florida-Gulf region using climate-model output and reanalysis data. Students identify the dominant physical predictors driving model performance.</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (marine heatwave hazards) and T2 (downstream consequences for coastal ecosystems and fisheries).</p>
+          </div>
+          <div class="project">
+            <div class="mentor">A. Holt <span class="dept">MGS</span></div>
+            <p>Computational geodynamics of double-subduction systems and their role in producing the fastest tectonic plate speeds on Earth. Students use global plate-reconstruction tools to test plate-speed scaling relationships against published numerical models.</p>
+          </div>
+          <div class="project">
+            <div class="mentor">F. P. Tuchen <span class="dept">OCE</span></div>
+            <p>Multidecadal changes in equatorial Atlantic ocean currents from long-term moored observations, with possible research-cruise participation. Students conduct quality-controlled time-series analysis and evaluate climate-index relationships.</p>
+            <p class="bridges"><em>Bridges to:</em> T1 (multidecadal climate variability) and T3 (long-term oceanographic record of environmental change).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ Apply ============ -->
+<section id="apply">
+  <div class="container">
+    <h2>How to Apply</h2>
+    <p class="lede">
+      Applications are received through the <strong>NSF Education &amp; Training Application (ETAP)</strong> platform. There is no application fee. Prior research experience is not required: COAST actively welcomes earlier-stage undergraduates, including rising sophomores and community-college transfer students.
+    </p>
+
+    <div class="apply-grid">
+      <div class="apply-steps">
+        <div class="apply-step">
+          <div>
+            <h4>Confirm eligibility</h4>
+            <p>U.S. citizens, nationals, or permanent residents currently enrolled in an undergraduate degree program. Students at all stages are encouraged to apply.</p>
+          </div>
+        </div>
+        <div class="apply-step">
+          <div>
+            <h4>Prepare your materials</h4>
+            <p>Personal statement, academic transcript (unofficial accepted), one faculty reference, and your ranked preferences among the COAST mentor projects.</p>
+          </div>
+        </div>
+        <div class="apply-step">
+          <div>
+            <h4>Submit through NSF ETAP</h4>
+            <p>All applications are managed through the NSF ETAP portal. Submitting through ETAP also supports longitudinal tracking of REU participants over time.</p>
+          </div>
+        </div>
+        <div class="apply-step">
+          <div>
+            <h4>Project matching</h4>
+            <p>The PI, Co-PI, Coordinator, and a rotating mentor subcommittee review applications using a structured rubric. Final offers and project matches are made in late March, with alternates identified.</p>
+          </div>
+        </div>
+        <div class="apply-step">
+          <div>
+            <h4>Arrive on Virginia Key</h4>
+            <p>Cohort programming begins in June with an orientation week and a campus tour of Rosenstiel and CIMAS.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="key-dates">
+        <h3>Key Dates (Summer 2027)</h3>
+        <div class="date-row"><span>Applications open</span><span class="when">Late 2026</span></div>
+        <div class="date-row"><span>Application deadline</span><span class="when">Early March 2027</span></div>
+        <div class="date-row"><span>Offers &amp; matches</span><span class="when">Late March 2027</span></div>
+        <div class="date-row"><span>Program begins</span><span class="when">June 2027</span></div>
+        <div class="date-row"><span>10-week program</span><span class="when">June &ndash; August</span></div>
+        <div class="date-row"><span>Symposium</span><span class="when">August 2027</span></div>
+        <p class="fineprint">Dates are illustrative for the first cohort and will be confirmed upon NSF award. From Year 2 onward, recruitment opens the preceding October.</p>
+      </aside>
+    </div>
+
+    <div class="eligibility">
+      <h3>Eligibility &amp; Selection Criteria</h3>
+      <p>Per NSF requirements, applicants must be U.S. citizens, nationals, or permanent residents enrolled in an undergraduate degree program at the time of the summer experience. Students who will graduate before the program starts are not eligible.</p>
+      <p style="margin-bottom: 8px;"><strong>Selection emphasizes:</strong></p>
+      <ul>
+        <li>Motivation and curiosity</li>
+        <li>Preparation appropriate to the proposed project</li>
+        <li>Potential for growth as a researcher</li>
+        <li>Alignment with available mentor projects</li>
+        <li>Evidence of persistence, problem-solving, or teamwork</li>
+      </ul>
+      <p style="margin-top: 12px; margin-bottom: 0;"><strong>At least half of each cohort</strong> is drawn from academic institutions where STEM research opportunities are limited, including primarily undergraduate institutions, community colleges, and minority-serving institutions. We actively encourage applications from students at these institutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Student Life ============ -->
+<section id="life" class="alt">
+  <div class="container">
+    <h2>Student Life &amp; Logistics</h2>
+    <p class="lede">
+      COAST is designed as a fully supported in-person experience. Stipend, housing, meals, and round-trip travel to Miami are all covered. Students live together on the University of Miami's Coral Gables campus and commute by UM inter-campus shuttle to the Rosenstiel campus on Virginia Key.
+    </p>
+
+    <div class="life-grid">
+      <div class="life-card">
+        <div class="icon-badge">$</div>
+        <h3>Stipend &amp; Support</h3>
+        <p>Participants receive a competitive weekly stipend across all ten weeks of the program (set at the NSF-expected level), plus a meal per-diem and reimbursement for round-trip travel to Miami. There is no cost to participate.</p>
+      </div>
+      <div class="life-card">
+        <div class="icon-badge">&#8962;</div>
+        <h3>Housing</h3>
+        <p>Shared cohort housing is provided on the University of Miami's Coral Gables campus for the full ten weeks. Living together strengthens cohort cohesion and removes financial and logistical barriers for students from outside the Miami area.</p>
+      </div>
+      <div class="life-card">
+        <div class="icon-badge">&#8635;</div>
+        <h3>Getting around</h3>
+        <p>Free UM inter-campus transportation runs between Coral Gables and the Rosenstiel campus on Virginia Key. Cohort field activities (CSTARS, the R/V <em>Walton Smith</em>, the National Hurricane Center, the Florida Reef Tract, and the Everglades) are arranged by the program.</p>
+      </div>
+      <div class="life-card">
+        <div class="icon-badge">&#9783;</div>
+        <h3>Research Environment</h3>
+        <p>You'll have access to the R/V <em>F. G. Walton Smith</em>, the SUSTAIN hurricane-scale wind-wave-surge laboratory, CSTARS remote sensing, genomics and sequencing facilities, and high-performance computing through UM's Frost Institute for Data Science and Computing.</p>
+      </div>
+      <div class="life-card">
+        <div class="icon-badge">&#9881;</div>
+        <h3>Cohort Programming</h3>
+        <p>Weekly research seminars, cross-project integration discussions, skills workshops (Python/Jupyter, version control, scientific writing, oral presentation), Responsible Conduct of Research training, career-pathways panels, and a culminating end-of-summer public symposium.</p>
+      </div>
+      <div class="life-card">
+        <div class="icon-badge">&#9874;</div>
+        <h3>Career Pathways</h3>
+        <p>Career panels span academia, NOAA and other federal laboratories, industry, non-profit, and applied-science paths. Selected students are supported to present at national meetings (AGU, AMS, Ocean Sciences, ASLO, SACNAS) and to continue research with their mentor beyond the summer.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 48px;">Living in Miami</h3>
+    <p>
+      The Rosenstiel campus on Virginia Key sits between Biscayne Bay and the Atlantic, a short causeway ride from downtown Miami and Miami Beach. Summer in South Florida is hot, humid, and shaped by sea-breeze convection and the seasonal threat of tropical cyclones; students experience first-hand the demanding environmental conditions they study. Miami is one of the most demographically diverse coastal cities in the United States, with rich Cuban, Haitian, Caribbean, Central American, and South American communities and a vibrant arts, music, and food scene.
+    </p>
+
+    <h3 style="margin-top: 30px;">Safe, Respectful, and Inclusive Environment</h3>
+    <p>
+      COAST is committed to a safe, respectful, inclusive, and harassment-free environment for all participants. Orientation week includes review of UM policies and reporting procedures, expectations of professional conduct, and field-safety planning. The Site Coordinator works with the UM Office of Disability Services to provide individualized accommodations for students with disabilities, including accessible housing, transportation, and lab and field accommodations.
+    </p>
+  </div>
+</section>
+
+<!-- ============ Footer / Contact ============ -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h4>COAST REU Site</h4>
+      <p style="margin-bottom: 12px;"><strong style="font-family: 'Source Serif Pro', Georgia, serif; font-size: 1.02rem;">Coastal Observation, Analysis, Simulation &amp; Technology</strong></p>
+      <p>Rosenstiel School of Marine, Atmospheric, and Earth Science<br>
+      University of Miami<br>
+      4600 Rickenbacker Causeway<br>
+      Miami, FL 33149</p>
+    </div>
+    <div>
+      <h4>Leadership</h4>
+      <ul>
+        <li><strong>Guoqing Lin</strong> (PI)<br><span style="font-size: 0.85rem;">Associate Dean of Research, Rosenstiel; Professor, MGS</span></li>
+        <li style="margin-top: 12px;"><strong>Ben Kirtman</strong> (Co-PI)<br><span style="font-size: 0.85rem;">Dean, Rosenstiel; Director, CIMAS; Deputy Director, IDSC</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About COAST</a></li>
+        <li><a href="#research">Research Projects</a></li>
+        <li><a href="#apply">How to Apply</a></li>
+        <li><a href="#life">Student Life</a></li>
+        <li style="margin-top: 8px;"><a href="https://etap.nsf.gov" target="_blank" rel="noopener">NSF ETAP &rarr;</a></li>
+        <li><a href="https://earth.miami.edu" target="_blank" rel="noopener">Rosenstiel School &rarr;</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>&copy; 2026 University of Miami &middot; Rosenstiel School of Marine, Atmospheric, and Earth Science</span>
+    <span class="nsf-note">COAST is proposed to the National Science Foundation Research Experiences for Undergraduates program. Pending NSF award.</span>
+  </div>
+</footer>
+
+</body>
+</html>
