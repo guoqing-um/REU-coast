@@ -1,47 +1,54 @@
 /* ============================================
    COAST REU Site — shared stylesheet
-   UNIVERSITY OF MIAMI INSTITUTIONAL IDENTITY
-   U Orange #F47321 · U Green #005030
+   University of Miami Rosenstiel School
+   Warm, light palette (orange / green family)
    ============================================ */
 :root {
   /* Primary brand */
-  --coral: #F47321;          /* U Orange — primary accent */
-  --coral-light: #FDEEE3;
-  --coral-soft: #FBDCC6;
-  --coral-deep: #C35009;     /* WCAG-AA orange for text on light */
+  --coral: #F58A42;          /* warm orange — primary accent */
+  --coral-light: #FDEFE2;
+  --coral-soft: #FADFC6;
+  --coral-deep: #B5551A;     /* warm deep orange for text on light */
 
-  /* Cool ocean accent */
-  --sky: #1B6E8C;
-  --sky-light: #E8F1F5;
-  --sky-soft: #CFE2EA;
+  /* Warm ocean accent */
+  --sky: #3F8FA8;
+  --sky-light: #E9F2F4;
+  --sky-soft: #CFE5EA;
 
-  /* Muted gold */
-  --sunshine: #B07D17;
-  --sunshine-light: #F6EFDD;
-  --sunshine-soft: #ECDDB8;
+  /* Warm gold */
+  --sunshine: #C99A2E;
+  --sunshine-light: #FBF1DA;
+  --sunshine-soft: #F2E2B8;
 
-  /* U Green — secondary accent */
-  --lavender: #005030;
-  --lavender-light: #E4EEE9;
-  --lavender-soft: #C5DBD0;
+  /* Warm green — secondary accent */
+  --lavender: #2E7D4A;
+  --lavender-light: #E6F1E8;
+  --lavender-soft: #CDE4D3;
 
-  /* Teal */
-  --mint: #0E7C7B;
-  --mint-light: #E3EFEF;
-  --mint-soft: #C6E0DF;
+  /* Warm teal */
+  --mint: #1E9080;
+  --mint-light: #E4F2EE;
+  --mint-soft: #C9E6DE;
 
   /* Sand / bronze */
-  --peach: #A9743B;
-  --peach-light: #F2EADF;
+  --peach: #BE8146;
+  --peach-light: #F7ECDD;
 
-  --warm-white: #FFFFFF;
-  --cream: #F4F6F7;          /* cool neutral section tint */
-  --soft-sand: #ECEFF1;
-  --ink: #1E2A2E;            /* deep slate ink */
-  --ink-soft: #4A565B;
-  --ink-muted: #79858A;
-  --rule: #E2E7E9;
-  --rule-light: #EEF1F2;
+  /* Department accents — light warm pastels (-bg) + readable same-hue text */
+  --atm: #7E5AA0;   --atm-bg: #ECE4F4;   /* purple */
+  --evr: #468C3E;   --evr-bg: #E4F1E0;   /* green */
+  --mbe: #C05A20;   --mbe-bg: #FBE5D4;   /* orange */
+  --mgs: #B23A7A;   --mgs-bg: #F8E0EC;   /* magenta */
+  --oce: #1C8678;   --oce-bg: #D9F0EA;   /* teal */
+
+  --warm-white: #FFFDF9;
+  --cream: #FAF4EC;          /* warm neutral section tint */
+  --soft-sand: #F2E9DC;
+  --ink: #2E2A26;            /* warm dark ink */
+  --ink-soft: #5A5048;
+  --ink-muted: #8A7F73;
+  --rule: #ECE3D7;
+  --rule-light: #F5EEE3;
   --card-bg: #FFFFFF;
   --max-w: 1180px;
 }
@@ -178,7 +185,7 @@ nav.main {
 /* ---------- Hero (home) ---------- */
 .hero {
   background:
-    linear-gradient(135deg, var(--mint-light) 0%, var(--sky-light) 50%, var(--sunshine-light) 100%);
+    linear-gradient(135deg, #E3EFEF 0%, #E8F1F5 50%, #F6EFDD 100%);
   color: var(--ink);
   padding: 84px 24px 72px;
   text-align: center;
@@ -276,7 +283,7 @@ nav.main {
 
 /* ---------- Page header band (interior pages) ---------- */
 .page-header {
-  background: linear-gradient(135deg, var(--mint-light) 0%, var(--sky-light) 55%, var(--sunshine-light) 100%);
+  background: linear-gradient(135deg, #E3EFEF 0%, #E8F1F5 55%, #F6EFDD 100%);
   color: var(--ink);
   padding: 54px 24px 48px;
   position: relative;
@@ -373,9 +380,15 @@ section.alt { background: var(--cream); }
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 .dept-card .dept-icon {
-  font-size: 1.9rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  font-size: 1.55rem;
   color: var(--dept-color);
-  margin-bottom: 10px;
+  background: var(--dept-bg, var(--coral-light));
   line-height: 1;
 }
 .dept-card .dept-acro {
@@ -632,8 +645,8 @@ section.alt { background: var(--cream); }
 }
 .dept-heading:first-of-type { margin-top: 32px; }
 .dept-heading .dept-badge {
-  background: var(--lavender);
-  color: #fff;
+  background: var(--soft-sand);
+  color: var(--ink);
   font-family: "Source Serif Pro", Georgia, serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -674,8 +687,8 @@ section.alt { background: var(--cream); }
 }
 .faculty-card .ftag {
   display: inline-block;
-  background: var(--sky-light);
-  color: var(--sky);
+  background: var(--soft-sand);
+  color: var(--ink-soft);
   font-size: 0.7rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -683,7 +696,7 @@ section.alt { background: var(--cream); }
   letter-spacing: 0.05em;
   margin-left: 6px;
   vertical-align: middle;
-  border: 1px solid var(--sky-soft);
+  border: 1px solid var(--rule);
 }
 .faculty-card p { font-size: 0.92rem; color: var(--ink-soft); margin: 8px 0 0; }
 .faculty-card p.corole {
