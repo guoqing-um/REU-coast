@@ -34,12 +34,12 @@
   --peach: #BE8146;
   --peach-light: #F7ECDD;
 
-  /* Department accents — light warm pastels (-bg) + readable same-hue text */
-  --atm: #7E5AA0;   --atm-bg: #ECE4F4;   /* purple */
-  --evr: #468C3E;   --evr-bg: #E4F1E0;   /* green */
-  --mbe: #C05A20;   --mbe-bg: #FBE5D4;   /* orange */
-  --mgs: #B23A7A;   --mgs-bg: #F8E0EC;   /* magenta */
-  --oce: #1C8678;   --oce-bg: #D9F0EA;   /* teal */
+  /* Department accents — matched to coast_backbone.jpg figure labels */
+  --atm: #1E619F;   --atm-bg: #E4EDF5;   /* blue */
+  --oce: #117283;   --oce-bg: #DBECEE;   /* teal */
+  --mbe: #32623E;   --mbe-bg: #E2EDE5;   /* green */
+  --mgs: #8A6320;   --mgs-bg: #EFE8D6;   /* earth brown / ochre */
+  --evr: #C26A1A;   --evr-bg: #FBEAD6;   /* orange */
 
   --warm-white: #FFFDF9;
   --cream: #FAF4EC;          /* warm neutral section tint */
@@ -698,6 +698,14 @@ section.alt { background: var(--cream); }
   vertical-align: middle;
   border: 1px solid var(--rule);
 }
+.faculty-card .frole {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+}
 .faculty-card p { font-size: 0.92rem; color: var(--ink-soft); margin: 8px 0 0; }
 .faculty-card p.corole {
   margin-top: 8px;
@@ -707,6 +715,17 @@ section.alt { background: var(--cream); }
   color: var(--ink-muted);
   font-style: italic;
 }
+.faculty-card .fprofile {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--oce);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.faculty-card .fprofile:hover { text-decoration: underline; }
+.faculty-card .fprofile i { font-size: 0.7em; margin-left: 4px; }
 
 /* ---------- FAQ accordion ---------- */
 .faq-list { margin-top: 32px; max-width: 880px; }
