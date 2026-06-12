@@ -34,12 +34,19 @@
   --peach: #BE8146;
   --peach-light: #F7ECDD;
 
+  /* Warm purple & rose accents */
+  --orchid: #8159A8;   --orchid-light: #EEE8F4;   /* soft violet */
+  --rose: #C65C84;     --rose-light: #F9E8EF;     /* warm pink */
+
+  /* Steel — serious neutral (Technology) */
+  --steel: #44505E;    --steel-light: #E9EBEE;    /* slate / graphite */
+
   /* Department accents — matched to coast_backbone.jpg figure labels */
-  --atm: #1E619F;   --atm-bg: #E4EDF5;   /* blue */
-  --oce: #117283;   --oce-bg: #DBECEE;   /* teal */
-  --mbe: #32623E;   --mbe-bg: #E2EDE5;   /* green */
-  --mgs: #8A6320;   --mgs-bg: #EFE8D6;   /* earth brown / ochre */
-  --evr: #C26A1A;   --evr-bg: #FBEAD6;   /* orange */
+  --atm: #1663CE;   --atm-bg: #E3EBF8;   /* vivid blue */
+  --oce: #0E9488;   --oce-bg: #D8EFEB;   /* vivid teal */
+  --mbe: #3E9C26;   --mbe-bg: #E5F1D9;   /* vivid green */
+  --mgs: #8B5E3C;   --mgs-bg: #EEE5D7;   /* soil brown (Solid Earth); matches backbone figure */
+  --evr: #E0700F;   --evr-bg: #FCE7CC;   /* vivid orange */
 
   --warm-white: #FFFDF9;
   --cream: #FAF4EC;          /* warm neutral section tint */
@@ -351,9 +358,10 @@ section.alt { background: var(--cream); }
   margin: 0 auto 16px;
   font-size: 1.4rem;
 }
-.pillar:nth-child(1) .pillar-icon { background: var(--coral-light); color: var(--coral-deep); }
-.pillar:nth-child(2) .pillar-icon { background: var(--lavender-light); color: var(--lavender); }
-.pillar:nth-child(3) .pillar-icon { background: var(--sky-light); color: var(--sky); }
+.pillar:nth-child(1) .pillar-icon { background: var(--oce-bg); color: var(--oce); }              /* Ocean — matches OCE dept */
+.pillar:nth-child(2) .pillar-icon { background: var(--atm-bg); color: var(--atm); }              /* Atmosphere — matches ATM dept */
+.pillar:nth-child(3) .pillar-icon { background: var(--mgs-bg); color: var(--mgs); }              /* Solid Earth — matches MGS dept */
+.pillar:nth-child(4) .pillar-icon { background: var(--steel-light); color: var(--steel); }        /* Technology — steel/slate (cross-cutting, no single dept) */
 .pillar h3 { color: var(--ink); margin-bottom: 8px; font-size: 1.15rem; }
 .pillar p { font-size: 0.96rem; }
 
@@ -627,12 +635,12 @@ section.alt { background: var(--cream); }
   font-size: 1.4rem;
   margin: 0 auto 16px;
 }
-.life-card:nth-child(1) .icon-badge { background: var(--coral-light); color: var(--coral-deep); }
-.life-card:nth-child(2) .icon-badge { background: var(--lavender-light); color: var(--lavender); }
-.life-card:nth-child(3) .icon-badge { background: var(--sky-light); color: var(--sky); }
-.life-card:nth-child(4) .icon-badge { background: var(--mint-light); color: var(--mint); }
-.life-card:nth-child(5) .icon-badge { background: var(--sunshine-light); color: var(--sunshine); }
-.life-card:nth-child(6) .icon-badge { background: var(--peach-light); color: var(--peach); }
+.life-card:nth-child(1) .icon-badge { background: var(--coral-light); color: var(--coral-deep); }   /* orange */
+.life-card:nth-child(2) .icon-badge { background: var(--orchid-light); color: var(--orchid); }      /* purple */
+.life-card:nth-child(3) .icon-badge { background: var(--sky-light); color: var(--sky); }            /* blue */
+.life-card:nth-child(4) .icon-badge { background: var(--lavender-light); color: var(--lavender); }  /* green */
+.life-card:nth-child(5) .icon-badge { background: var(--sunshine-light); color: var(--sunshine); }  /* gold */
+.life-card:nth-child(6) .icon-badge { background: var(--rose-light); color: var(--rose); }          /* pink */
 .life-card h3 { margin-bottom: 10px; font-size: 1.1rem; }
 .life-card p { font-size: 0.96rem; margin-bottom: 0; }
 
@@ -698,6 +706,12 @@ section.alt { background: var(--cream); }
   vertical-align: middle;
   border: 1px solid var(--rule);
 }
+/* Department color chips — one color per dept, used on every page (.dept and .ftag) */
+.d-atm { background: var(--atm-bg) !important; color: var(--atm) !important; border-color: var(--atm) !important; }
+.d-oce { background: var(--oce-bg) !important; color: var(--oce) !important; border-color: var(--oce) !important; }
+.d-mbe { background: var(--mbe-bg) !important; color: var(--mbe) !important; border-color: var(--mbe) !important; }
+.d-mgs { background: var(--mgs-bg) !important; color: var(--mgs) !important; border-color: var(--mgs) !important; }
+.d-evr { background: var(--evr-bg) !important; color: var(--evr) !important; border-color: var(--evr) !important; }
 .faculty-card .frole {
   display: block;
   margin-top: 5px;
