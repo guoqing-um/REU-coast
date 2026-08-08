@@ -1,11 +1,11 @@
 /* ============================================
-   COAST REU Site — shared stylesheet
+   COAST REU Site, shared stylesheet
    University of Miami Rosenstiel School
    Warm, light palette (orange / green family)
    ============================================ */
 :root {
   /* Primary brand */
-  --coral: #F58A42;          /* warm orange — primary accent */
+  --coral: #F58A42;          /* warm orange, primary accent */
   --coral-light: #FDEFE2;
   --coral-soft: #FADFC6;
   --coral-deep: #B5551A;     /* warm deep orange for text on light */
@@ -20,7 +20,7 @@
   --sunshine-light: #FBF1DA;
   --sunshine-soft: #F2E2B8;
 
-  /* Warm green — secondary accent */
+  /* Warm green, secondary accent */
   --lavender: #2E7D4A;
   --lavender-light: #E6F1E8;
   --lavender-soft: #CDE4D3;
@@ -38,10 +38,10 @@
   --orchid: #8159A8;   --orchid-light: #EEE8F4;   /* soft violet */
   --rose: #C65C84;     --rose-light: #F9E8EF;     /* warm pink */
 
-  /* Steel — serious neutral (Technology) */
+  /* Steel, serious neutral (Technology) */
   --steel: #44505E;    --steel-light: #E9EBEE;    /* slate / graphite */
 
-  /* Department accents — matched to coast_backbone.jpg figure labels */
+  /* Department accents, matched to coast_backbone.jpg figure labels */
   --atm: #1663CE;   --atm-bg: #E3EBF8;   /* vivid blue */
   --oce: #0E9488;   --oce-bg: #D8EFEB;   /* vivid teal */
   --mbe: #3E9C26;   --mbe-bg: #E5F1D9;   /* vivid green */
@@ -358,10 +358,10 @@ section.alt { background: var(--cream); }
   margin: 0 auto 16px;
   font-size: 1.4rem;
 }
-.pillar:nth-child(1) .pillar-icon { background: var(--oce-bg); color: var(--oce); }              /* Ocean — matches OCE dept */
-.pillar:nth-child(2) .pillar-icon { background: var(--atm-bg); color: var(--atm); }              /* Atmosphere — matches ATM dept */
-.pillar:nth-child(3) .pillar-icon { background: var(--mgs-bg); color: var(--mgs); }              /* Solid Earth — matches MGS dept */
-.pillar:nth-child(4) .pillar-icon { background: var(--steel-light); color: var(--steel); }        /* Technology — steel/slate (cross-cutting, no single dept) */
+.pillar:nth-child(1) .pillar-icon { background: var(--oce-bg); color: var(--oce); }              /* Ocean, matches OCE dept */
+.pillar:nth-child(2) .pillar-icon { background: var(--atm-bg); color: var(--atm); }              /* Atmosphere, matches ATM dept */
+.pillar:nth-child(3) .pillar-icon { background: var(--mgs-bg); color: var(--mgs); }              /* Solid Earth, matches MGS dept */
+.pillar:nth-child(4) .pillar-icon { background: var(--steel-light); color: var(--steel); }        /* Technology, steel/slate (cross-cutting, no single dept) */
 .pillar h3 { color: var(--ink); margin-bottom: 8px; font-size: 1.15rem; }
 .pillar p { font-size: 0.96rem; }
 
@@ -706,7 +706,7 @@ section.alt { background: var(--cream); }
   vertical-align: middle;
   border: 1px solid var(--rule);
 }
-/* Department color chips — one color per dept, used on every page (.dept and .ftag) */
+/* Department color chips, one color per dept, used on every page (.dept and .ftag) */
 .d-atm { background: var(--atm-bg) !important; color: var(--atm) !important; border-color: var(--atm) !important; }
 .d-oce { background: var(--oce-bg) !important; color: var(--oce) !important; border-color: var(--oce) !important; }
 .d-mbe { background: var(--mbe-bg) !important; color: var(--mbe) !important; border-color: var(--mbe) !important; }
@@ -777,7 +777,7 @@ section.alt { background: var(--cream); }
   transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 0 24px;
 }
-.faq-item.open .faq-a { max-height: 600px; padding: 0 24px 20px; }
+.faq-item.open .faq-a { max-height: 900px; padding: 0 24px 20px; }
 .faq-a p { margin: 0; font-size: 0.97rem; }
 .faq-a p + p { margin-top: 10px; }
 
@@ -859,4 +859,289 @@ footer strong { color: var(--ink) !important; }
   .stat { min-width: 100px; }
   .stat .num { font-size: 1.6rem; }
   section { padding: 50px 20px; }
+}
+
+/* ============================================
+   V06 additions, components added to carry the
+   V30 proposal structure onto the public site
+   ============================================ */
+
+/* ---------- Organizing-question callout ---------- */
+.question-card {
+  background: linear-gradient(135deg, #E3EFEF 0%, #E8F1F5 55%, #F6EFDD 100%);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--coral);
+  border-radius: 12px;
+  padding: 30px 34px;
+  margin: 32px 0 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.question-card .qlabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--coral-deep);
+  margin-bottom: 10px;
+}
+.question-card .qtext {
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-size: 1.32rem;
+  line-height: 1.45;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0;
+}
+.question-card .qnote { font-size: 0.94rem; color: var(--ink-soft); margin: 14px 0 0; font-style: normal; }
+
+/* ---------- Process arc ---------- */
+.arc {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 26px;
+}
+.arc-step {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--sky);
+  border-radius: 10px;
+  padding: 18px 16px 16px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.arc-step:nth-child(1) { border-top-color: var(--atm); }
+.arc-step:nth-child(2) { border-top-color: var(--oce); }
+.arc-step:nth-child(3) { border-top-color: var(--mbe); }
+.arc-step:nth-child(4) { border-top-color: var(--evr); }
+.arc-step:nth-child(5) { border-top-color: var(--mgs); }
+.arc-step .arc-n {
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+.arc-step h4 {
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.0rem;
+  margin: 6px 0 6px;
+}
+.arc-step p { font-size: 0.85rem; margin: 0; color: var(--ink-soft); line-height: 1.45; }
+.arc-step:not(:last-child)::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: -11px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--coral);
+  z-index: 2;
+}
+.arc-caption { font-size: 0.9rem; color: var(--ink-muted); font-style: italic; margin-top: 14px; }
+
+/* ---------- Domain cards (home) ---------- */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.domain-card {
+  --dom: var(--coral);
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--dom);
+  border-radius: 12px;
+  padding: 26px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.domain-card:hover { transform: translateY(-4px); box-shadow: 0 8px 26px rgba(0,0,0,0.1); }
+.domain-card .dnum {
+  display: inline-block;
+  background: var(--dom);
+  color: #fff;
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.domain-card h3 { font-size: 1.16rem; margin-bottom: 8px; }
+.domain-card p { font-size: 0.94rem; margin-bottom: 10px; }
+.domain-card .dcount { font-size: 0.8rem; color: var(--ink-muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; }
+
+/* ---------- Cross-cutting layer band ---------- */
+.xcut {
+  background: var(--steel-light);
+  border: 1px solid #D5DAE0;
+  border-left: 5px solid var(--steel);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 20px;
+}
+.xcut h3 { margin-bottom: 8px; font-size: 1.12rem; }
+.xcut p { margin-bottom: 0; font-size: 0.95rem; }
+
+/* ---------- Goals list ---------- */
+.goal-list { list-style: none; padding: 0; margin: 20px 0 0; counter-reset: goal; }
+.goal-list li {
+  counter-increment: goal;
+  position: relative;
+  padding: 10px 0 10px 46px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.99rem;
+}
+.goal-list li:last-child { border-bottom: none; }
+.goal-list li::before {
+  content: counter(goal);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 30px; height: 30px;
+  background: var(--lavender-light);
+  color: var(--lavender);
+  border: 1px solid var(--lavender-soft);
+  border-radius: 8px;
+  display: grid; place-items: center;
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ---------- Two-column split ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+/* ---------- Weekly schedule table ---------- */
+.sched-wrap { margin-top: 28px; overflow-x: auto; }
+table.sched {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+table.sched th {
+  background: var(--lavender);
+  color: #fff;
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+table.sched td { padding: 12px 14px; border-top: 1px solid var(--rule); color: var(--ink-soft); vertical-align: top; line-height: 1.5; }
+table.sched tbody tr:nth-child(even) { background: var(--rule-light); }
+table.sched tbody tr.milestone { background: var(--sunshine-light); }
+table.sched tbody tr.milestone td { color: var(--ink); }
+table.sched td.wk {
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-weight: 700;
+  color: var(--coral-deep);
+  text-align: center;
+  width: 48px;
+}
+table.sched td strong { color: var(--ink); }
+.sched-note { font-size: 0.88rem; color: var(--ink-muted); font-style: italic; margin-top: 12px; }
+
+/* ---------- Program leadership ---------- */
+.lead-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.lead-card {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--sky);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.lead-card .lrole {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--coral-deep);
+}
+.lead-card .lname {
+  display: block;
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-weight: 700;
+  color: var(--lavender);
+  font-size: 1.06rem;
+  margin-top: 6px;
+  line-height: 1.2;
+}
+.lead-card p { font-size: 0.88rem; margin: 8px 0 0; }
+
+/* ---------- Deliverables / products ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 26px;
+}
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--sunshine);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+.product-card h4 { color: var(--ink); text-transform: none; letter-spacing: 0; font-size: 1.0rem; margin-bottom: 6px; }
+.product-card p { font-size: 0.88rem; margin: 0; }
+
+/* ---------- Fact strip ---------- */
+.factstrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+.fact {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.fact .fk { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink-muted); font-weight: 700; }
+.fact .fv { display: block; font-family: "Source Serif Pro", Georgia, serif; font-size: 1.02rem; color: var(--ink); margin-top: 4px; font-weight: 600; line-height: 1.35; }
+
+/* ---------- Responsive (V06 components) ---------- */
+@media (max-width: 980px) {
+  .arc { grid-template-columns: repeat(2, 1fr); }
+  .arc-step:not(:last-child)::after { display: none; }
+  .domain-grid { grid-template-columns: 1fr; }
+  .lead-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .factstrip { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .arc { grid-template-columns: 1fr; }
+  .lead-grid, .product-grid, .factstrip { grid-template-columns: 1fr; }
+  .question-card { padding: 22px 20px; }
+  .question-card .qtext { font-size: 1.1rem; }
 }
